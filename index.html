@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>💘プロポーズシミュレーター</title>
+<title>💘求婚模拟器</title>
 <style>
 :root{--panel-width:300px}
 body{margin:0;font-family:'Helvetica Neue',Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;background:#fff;overflow:hidden}
@@ -56,88 +56,88 @@ input[type=number]{-moz-appearance:textfield}
 
 <div id="ui-panel">
     <div class="panel-header" onclick="togglePanel()">
-        <h1 class="app-title">💘プロポーズシミュレーター</h1>
-        <span id="toggle-text">閉じる</span>
+        <h1 class="app-title">💘求婚模拟器</h1>
+        <span id="toggle-text">收起</span>
     </div>
     <div id="ui-content">
-        <p class="app-description">性別と身長からプロポーズシーンをシミュレーションします。</p>
+        <p class="app-description">可根据性别与身高模拟求婚的场景。</p>
 
         <div class="input-group group-a">
-            <div class="section-header"><strong>A (プロポーズされる側)</strong></div>
+            <div class="section-header"><strong>A（被求婚的一方）</strong></div>
             <div class="input-row">
-                <div class="input-item"><span class="hint">名前</span><input type="text" id="nameA" placeholder="名前A" oninput="updateScene()"></div>
-                <div class="input-item" style="flex:.6"><span class="hint">性別</span><select id="genderA" onchange="updateScene()"><option value="male">男</option><option value="female" selected>女</option></select></div>
+                <div class="input-item"><span class="hint">名字</span><input type="text" id="nameA" placeholder="名字A" oninput="updateScene()"></div>
+                <div class="input-item" style="flex:.6"><span class="hint">性别</span><select id="genderA" onchange="updateScene()"><option value="male">男</option><option value="female" selected>女</option></select></div>
             </div>
             <div class="input-row">
-                <div class="input-item"><span class="hint">身長 (cm)</span><input type="number" id="heightA" value="158.0" step="0.1" oninput="updateScene()"></div>
-                <div class="input-item" style="flex:.35"><span class="hint">色</span><input type="color" id="colorA" class="color-picker" value="#ffcc99" oninput="updateScene()"></div>
+                <div class="input-item"><span class="hint">身高 (cm)</span><input type="number" id="heightA" value="158.0" step="0.1" oninput="updateScene()"></div>
+                <div class="input-item" style="flex:.35"><span class="hint">颜色</span><input type="color" id="colorA" class="color-picker" value="#ffcc99" oninput="updateScene()"></div>
             </div>
         </div>
 
         <div class="input-group group-b">
-            <div class="section-header"><strong>B (プロポーズする側)</strong></div>
+            <div class="section-header"><strong>B（求婚的一方）</strong></div>
             <div class="input-row">
-                <div class="input-item"><span class="hint">名前</span><input type="text" id="nameB" placeholder="名前B" oninput="updateScene()"></div>
-                <div class="input-item" style="flex:.6"><span class="hint">性別</span><select id="genderB" onchange="updateScene()"><option value="male" selected>男</option><option value="female">女</option></select></div>
+                <div class="input-item"><span class="hint">名字</span><input type="text" id="nameB" placeholder="名字B" oninput="updateScene()"></div>
+                <div class="input-item" style="flex:.6"><span class="hint">性别</span><select id="genderB" onchange="updateScene()"><option value="male" selected>男</option><option value="female">女</option></select></div>
             </div>
             <div class="input-row">
-                <div class="input-item"><span class="hint">身長 (cm)</span><input type="number" id="heightB" value="171.5" step="0.1" oninput="updateScene()"></div>
-                <div class="input-item" style="flex:.35"><span class="hint">色</span><input type="color" id="colorB" class="color-picker" value="#ffad60" oninput="updateScene()"></div>
+                <div class="input-item"><span class="hint">身高 (cm)</span><input type="number" id="heightB" value="171.5" step="0.1" oninput="updateScene()"></div>
+                <div class="input-item" style="flex:.35"><span class="hint">颜色</span><input type="color" id="colorB" class="color-picker" value="#ffad60" oninput="updateScene()"></div>
             </div>
         </div>
 
         <div class="input-group group-layout">
-            <div class="section-header"><strong>プロポーズ設定</strong></div>
+            <div class="section-header"><strong>求婚设置</strong></div>
             <div class="input-item" style="margin-bottom:8px">
-                <span class="hint">プロポーズのポーズ（BからAへ）</span>
+                <span class="hint">求婚姿势（由 B 面向 A）</span>
                 <div class="radio-switch">
                     <input type="radio" id="pose-hand" name="confessPose" value="hand" checked onchange="updateScene()"><label for="pose-hand">✋手</label>
-                    <input type="radio" id="pose-letter" name="confessPose" value="letter" onchange="updateScene()"><label for="pose-letter">💌手紙</label>
-                    <input type="radio" id="pose-choco" name="confessPose" value="choco" onchange="updateScene()"><label for="pose-choco">🍫チョコ</label>
-                    <input type="radio" id="pose-rose" name="confessPose" value="rose" onchange="updateScene()"><label for="pose-rose">🌹バラ</label>
-                    <input type="radio" id="pose-ring" name="confessPose" value="ring" onchange="updateScene()"><label for="pose-ring">💍指輪</label>
+                    <input type="radio" id="pose-letter" name="confessPose" value="letter" onchange="updateScene()"><label for="pose-letter">💌情书</label>
+                    <input type="radio" id="pose-choco" name="confessPose" value="choco" onchange="updateScene()"><label for="pose-choco">🍫巧克力</label>
+                    <input type="radio" id="pose-rose" name="confessPose" value="rose" onchange="updateScene()"><label for="pose-rose">🌹玫瑰</label>
+                    <input type="radio" id="pose-ring" name="confessPose" value="ring" onchange="updateScene()"><label for="pose-ring">💍戒指</label>
                 </div>
             </div>
             <div class="input-item" id="hand-side-box" style="margin-bottom:8px">
-                <span class="hint">差し出す手（Bの手）</span>
+                <span class="hint">伸出的手（B 的手）</span>
                 <div class="radio-switch">
                     <input type="radio" id="side-l" name="handSide" value="left" checked onchange="updateScene()"><label for="side-l">左手</label>
-                    <input type="radio" id="side-b" name="handSide" value="both" onchange="updateScene()"><label for="side-b">両手</label>
+                    <input type="radio" id="side-b" name="handSide" value="both" onchange="updateScene()"><label for="side-b">双手</label>
                     <input type="radio" id="side-r" name="handSide" value="right" onchange="updateScene()"><label for="side-r">右手</label>
                 </div>
             </div>
             <div class="input-item">
-                <span class="hint">プロポーズの結果</span>
+                <span class="hint">求婚结果</span>
                 <div class="radio-switch">
                     <input type="radio" id="res-ok" name="confessResult" value="success" checked onchange="updateScene()"><label for="res-ok">成功</label>
-                    <input type="radio" id="res-ng" name="confessResult" value="fail" onchange="updateScene()"><label for="res-ng">失敗</label>
+                    <input type="radio" id="res-ng" name="confessResult" value="fail" onchange="updateScene()"><label for="res-ng">失败</label>
                 </div>
             </div>
         </div>
 
         <div style="padding:0 5px">
-            <button class="switch-btn swap-btn" onclick="swapAB()">⇄ AとBを入れ替える</button>
-            <button class="switch-btn" onclick="switchView()">🔄 視点を切り替える</button>
+            <button class="switch-btn swap-btn" onclick="swapAB()">⇄ 交换 A 与 B</button>
+            <button class="switch-btn" onclick="switchView()">🔄 切换视角</button>
         </div>
 
         <div id="info-container">
             <div class="info-box" id="info"></div>
             <button class="share-btn" onclick="shareToX()">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>で結果をシェアする
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg> 分享结果
             </button>
             <div class="other-tools-link">
-                <p style="font-size:10px;color:#888;margin-bottom:8px">こちらもチェック❣🤩</p>
-                <a href="https://qwertyaz111.github.io/my-site-hub/">ツール・シミュレーター一覧</a>
+                <p style="font-size:10px;color:#888;margin-bottom:8px">顺便也看看这些❣🤩</p>
+                <a href="https://qwertyaz111.github.io/my-site-hub/">工具・模拟器合集</a>
             </div>
             <div class="usage-notes">
-                スクショ投稿や加工、トレース等はご自由にお楽しみください。<br>
-                ※営利目的や商用利用はご遠慮ください。
+                截图分享、二次加工、临摹描图等都可以随意使用。<br>
+                ※请勿用于营利、商业用途。
             </div>
         </div>
     </div>
 </div>
 
-<div id="view-label">三人称視点</div>
+<div id="view-label">第三人称视角</div>
 <div class="crosshair" id="crosshair" style="display:none"></div>
 <div id="canvas-container"></div>
 
@@ -172,7 +172,7 @@ function init() {
     window.togglePanel = () => {
         const panel = $('ui-panel');
         panel.classList.toggle('collapsed');
-        $('toggle-text').innerText = panel.classList.contains('collapsed') ? '開く' : '閉じる';
+        $('toggle-text').innerText = panel.classList.contains('collapsed') ? '展开' : '收起';
     };
     document.querySelectorAll('#ui-panel input, #ui-panel select').forEach(el => {
         el.addEventListener('blur', () => { $('ui-panel').scrollTop = 0; window.scrollTo(0, 0); });
@@ -263,7 +263,7 @@ function createMannequin(color, heightCm, gender, name, role) {
     return group;
 }
 
-// ===== ポーズ用ヘルパー =====
+// ===== 姿势用的辅助函数 =====
 function applyLean(p, angle) {
     const pivot = new THREE.Group();
     pivot.position.y = p.userData.legH;
@@ -307,7 +307,7 @@ function solveTwoBone(S, T, l1, l2, pole) {
     return { E: S.clone().add(dir.clone().multiplyScalar(a)).add(p.multiplyScalar(h)), H: S.clone().add(v) };
 }
 
-// 人物座標（腰が原点・+zが正面）での腕・脚のIK
+// 人物坐标（腰为原点・+z 为正前方）下的手臂・腿部 IK
 const rx = (v, a) => v.applyAxisAngle(AXIS_X, a);
 const headH = u => u.height * 0.13;
 const toW = (p, v) => p.localToWorld(v.clone().add(V(0, p.userData.legH, 0)));
@@ -315,13 +315,13 @@ function shoulder(p, i, L) {
     const u = p.userData;
     return rx(V((i ? 1 : -1) * u.shoulderW, u.shoulderY - u.legH, 0), L);
 }
-// 曲がっている四肢だけ関節をつける（ほぼ真っ直ぐなら1本の棒のまま）
+// 只给弯曲的四肢加关节（几乎笔直时仍保持为一根棍子）
 function limb(a, dU, dL) {
     const u = dU.clone().normalize(), l = dL.clone().normalize();
     if (u.dot(l) > 0.985) { aim(a, u.add(l)); return; }
     addJoint(a); aimLimb(a, dU, dL);
 }
-const hang = a => limb(a, V(0, -1, 0), V(0, -1, 0)); // 真下（上半身に沿わせる）
+const hang = a => limb(a, V(0, -1, 0), V(0, -1, 0)); // 正下方（贴合上半身）
 function armTo(p, i, T, pole, L) {
     const a = p.arms[i], S = shoulder(p, i, L);
     const { E, H } = solveTwoBone(S, T, a.half, a.half, pole);
@@ -342,8 +342,8 @@ function kneel(p, one, L) {
     if (one) {
         hipY = h2 + t / 2; zk = h2; prep(p, L, hipY);
         const a = t / 2 / h2;
-        limb(p.legs[1], V(0, -a, Math.sqrt(1 - a * a)), V(0, -1, 0)); // 前脚（足裏が床）
-        limb(p.legs[0], V(0, -1, 0), V(0, 0, -1));                   // 後ろ脚（膝立ち）
+        limb(p.legs[1], V(0, -a, Math.sqrt(1 - a * a)), V(0, -1, 0)); // 前腿（脚底贴地）
+        limb(p.legs[0], V(0, -1, 0), V(0, 0, -1));                   // 后腿（跪姿）
     } else {
         zk = h2 * 0.7;
         const d = Math.sqrt(h2 * h2 - zk * zk);
@@ -353,8 +353,8 @@ function kneel(p, one, L) {
     return { hipY, zk };
 }
 
-// ----- Aのポーズ -----
-function surprised(A) { // 成功：ほんの少し腰を曲げて仰け反り、両手で口を押さえて驚く
+// ----- A 的姿势 -----
+function surprised(A) { // 成功：腰部微微弯曲后仰，双手捂嘴显出惊讶
     const u = A.userData, hh = headH(u), L = -0.15;
     prep(A, L, u.legH);
     A.legs.forEach(hang);
@@ -364,7 +364,7 @@ function surprised(A) { // 成功：ほんの少し腰を曲げて仰け反り�
     });
     return { front: 0.22 };
 }
-function bow(A) { // 失敗：「ごめんなさい」の自然なお辞儀（手は太ももへ）
+function bow(A) { // 失败：自然的“对不起”式鞠躬（手放在大腿上）
     const u = A.userData, L = 0.6, hh = headH(u);
     prep(A, L, u.legH);
     A.legs.forEach(hang);
@@ -372,18 +372,18 @@ function bow(A) { // 失敗：「ごめんなさい」の自然なお辞儀（�
     return { front: rx(V(0, u.height - hh * 0.5 - u.legH, 0), L).z + hh * 0.8 + 0.03 };
 }
 
-// ----- Bのポーズ（成功・失敗とも同じ。失敗は持っている物を落とすだけ） -----
-function bowHand(B, mode, ok) { // 手（左/右/両手）・手紙（両手＋手紙）：軽くお辞儀して腕を差し出す
+// ----- B 的姿势（成功・失败都一样。失败只是把手里的东西掉在地上） -----
+function bowHand(B, mode, ok) { // 手（左/右/双手）・信（双手＋信）：轻轻鞠躬并伸出手臂
     const u = B.userData, L = 0.6, len = B.arms[1].half * 2, tips = [];
     prep(B, L, u.legH);
     B.legs.forEach(hang);
-    B.headParts.rotation.x = 0.3; // 下を向く
+    B.headParts.rotation.x = 0.3; // 脸朝下
     const out = [mode !== 'left', mode !== 'right']; // [右手, 左手]
     B.arms.forEach((a, i) => {
-        if (!out[i]) { hang(a); return; } // 差し出していない腕は胴体に沿わせる
-        const inward = (mode === 'both' || mode === 'letter' || mode === 'choco') ? 0.15 * u.shoulderW / len : 0; // 両手は肩幅の約85%
+        if (!out[i]) { hang(a); return; } // 没有伸出的手臂贴着躯干
+        const inward = (mode === 'both' || mode === 'letter' || mode === 'choco') ? 0.15 * u.shoulderW / len : 0; // 双手约为肩宽的 85%
         const d = V(i ? -inward : inward, 0, 1).normalize();
-        limb(a, rx(d.clone(), -L), rx(d.clone(), -L)); // 肘を曲げず、まっすぐ差し出す
+        limb(a, rx(d.clone(), -L), rx(d.clone(), -L)); // 不弯曲肘部，笔直地伸出
         tips.push(shoulder(B, i, L).add(d.multiplyScalar(len)));
     });
     return {
@@ -399,7 +399,7 @@ function bowHand(B, mode, ok) { // 手（左/右/両手）・手紙（両手＋�
         }
     };
 }
-function kneelHold(B, kind, ok) { // 片膝をついてバラ／指輪を差し出す（失敗なら床に落とす）
+function kneelHold(B, kind, ok) { // 单膝跪地递出玫瑰／戒指（失败则掉在地上）
     const u = B.userData, L = 0.1, h = u.height, sw = u.shoulderW, sy = u.shoulderY - u.legH;
     kneel(B, true, L);
     const P = (x, y, z) => rx(V(x, y, z), L);
@@ -407,7 +407,7 @@ function kneelHold(B, kind, ok) { // 片膝をついてバラ／指輪を差し�
     if (kind === 'ring') {
         G = P(sw * 0.25, sy - 0.04 * h, 0.3 * h);
         armTo(B, 1, G, V(0.4, -1, -0.3), L);
-        armTo(B, 0, P(-sw - 0.02, sy - 0.34 * h, 0.05), V(-1, 0, -0.5), L); // 腕を曲げて体にくっつける
+        armTo(B, 0, P(-sw - 0.02, sy - 0.34 * h, 0.05), V(-1, 0, -0.5), L); // 弯曲手臂贴在身上
     } else {
         G = P(0, sy - 0.1 * h, 0.27 * h);
         armTo(B, 1, G.clone().add(V(0.04, 0, 0)), V(0.5, -1, -0.2), L);
@@ -415,7 +415,7 @@ function kneelHold(B, kind, ok) { // 片膝をついてバラ／指輪を差し�
     }
     return {
         front: G.z + (kind === 'ring' ? 0.08 : ok ? 0.2 : 0.4),
-        extra: kind === 'ring' ? 0.05 : ok ? 0.27 : 0.1, // 持ち物が前に出る分
+        extra: kind === 'ring' ? 0.05 : ok ? 0.27 : 0.1, // 手持物向前伸出的量
         place() {
             const g = toW(B, G);
             if (kind === 'ring') {
@@ -442,7 +442,7 @@ function setupConfession(A, B, pose, ok, side) {
     A.position.x = 0; B.position.x = 0;
     A.updateMatrixWorld(true); B.updateMatrixWorld(true);
     const bound = p => { const bx = new THREE.Box3(); p.traverse(o => { if (o.isMesh) bx.expandByObject(o, true); }); return bx; };
-    // Aの一番前とBの一番前（持ち物込み）の間が常に一定の距離になるように配置
+    // 摆位时让 A 的最前端与 B 的最前端（含手持物）始终保持固定距离
     const gap = bound(A).max.x - bound(B).min.x + 0.3 + (pb.extra || 0);
     A.position.x = -gap / 2; B.position.x = gap / 2;
     return { gap, place: pb.place };
@@ -465,7 +465,7 @@ function letter(w) {
     g.add(M(new THREE.BoxGeometry(w, 0.008, 0.1), 0xfffaf0, 0), M(new THREE.CylinderGeometry(0.014, 0.014, 0.004, 16), 0xe0405a, 0.006));
     return g;
 }
-function chocoBox(w) { // ハート型のバレンタインチョコの箱（先端がA側を向く）
+function chocoBox(w) { // 心形情人节巧克力盒子（尖端朝向 A 侧）
     const g = new THREE.Group();
     const sx = w / 2, sy = w * 0.44;
     const heart = k => {
@@ -484,20 +484,20 @@ function chocoBox(w) { // ハート型のバレンタインチョコの箱（先
     };
     g.add(flat(1, 0.035, 0xc8102e, -0.0175), flat(0.86, 0.006, 0xffc2d1, 0.0175));
 
-    // ---- リボン（帯＋蝶結び） ----
+    // ---- 缎带（带身＋蝴蝶结） ----
     const gold = 0xffd34d, topY = 0.0235;
     const bandW = sx * 0.16, bandT = 0.004;
-    // 縦帯（先端方向）と横帯
+    // 竖带（尖端方向）与横带
     const bandZ = new THREE.Mesh(new THREE.BoxGeometry(bandW, bandT, sy * 1.7), mat(gold));
     bandZ.position.set(0, topY + bandT / 2, sy * 0.05); g.add(bandZ);
     const bandX = new THREE.Mesh(new THREE.BoxGeometry(sx * 1.6, bandT * 0.9, bandW), mat(gold));
     bandX.position.set(0, topY + bandT * 0.45, -sy * 0.2); g.add(bandX);
 
-    // 蝶結び：結び目の位置
+    // 蝴蝶结：结的位置
     const bow = new THREE.Group();
     bow.position.set(0, topY + bandT, -sy * 0.2);
     g.add(bow);
-    // 輪っか（穴あきの楕円リボンを立てて外側へ開く）
+    // 环（把带孔的椭圆缎带立起来向外张开）
     const loopShape = () => {
         const s = new THREE.Shape();
         s.absellipse(0, 0, sx * 0.3, sx * 0.18, 0, Math.PI * 2, false, 0);
@@ -508,12 +508,12 @@ function chocoBox(w) { // ハート型のバレンタインチョコの箱（先
     };
     [-1, 1].forEach(side => {
         const pivot = new THREE.Group();
-        pivot.rotation.z = -side * 0.35; // 外側が持ち上がる
+        pivot.rotation.z = -side * 0.35; // 外侧会抬起
         const loop = new THREE.Mesh(new THREE.ExtrudeGeometry(loopShape(), { depth: bandT * 1.4, bevelEnabled: false, curveSegments: 24 }), mat(gold));
         loop.rotation.x = -Math.PI / 2;
         loop.position.set(side * sx * 0.3, 0, 0);
         pivot.add(loop);
-        // 輪の中の薄い面（リボンの布感）
+        // 环内的薄面（缎带的布料质感）
         const fill = new THREE.Mesh(new THREE.CircleGeometry(1, 24), new THREE.MeshPhongMaterial({ color: 0xffe58a, side: THREE.DoubleSide, transparent: true, opacity: 0.55 }));
         fill.scale.set(sx * 0.3 - bandW * 0.9, sx * 0.18 - bandW * 0.9, 1);
         fill.rotation.x = -Math.PI / 2;
@@ -521,7 +521,7 @@ function chocoBox(w) { // ハート型のバレンタインチョコの箱（先
         pivot.add(fill);
         bow.add(pivot);
     });
-    // 垂れ下がるしっぽ（先がV字にカット）
+    // 垂下的尾带（前端剪成 V 字）
     [-1, 1].forEach(side => {
         const tl = sx * 0.55, tw = bandW * 1.15;
         const ts = new THREE.Shape();
@@ -534,7 +534,7 @@ function chocoBox(w) { // ハート型のバレンタインチョコの箱（先
         tp.add(tail);
         bow.add(tp);
     });
-    // 結び目
+    // 结的位置
     const knot = new THREE.Mesh(new THREE.SphereGeometry(bandW * 0.85, 14, 10), mat(0xf0b400));
     knot.scale.set(1.1, 0.7, 1); knot.position.y = bandT * 1.2; bow.add(knot);
     return g;
@@ -575,7 +575,7 @@ function updateScene() {
     const key = pose + ok + side;
     if (key !== lastKey) { lastKey = key; camDist = Math.max(3, r.gap * 1.5 + 0.8); }
 
-    // 名前タグは上半身の傾きから切り離して頭の上に置く
+    // 名字标签与上半身倾斜解耦，放在头顶上方
     [personA, personB].forEach(p => { if (p.pivot && p.nameTag.parent === p.pivot) { p.pivot.remove(p.nameTag); p.add(p.nameTag); } });
     walkGroup.updateMatrixWorld(true);
     const head = p => p.headParts.getWorldPosition(V());
@@ -586,14 +586,14 @@ function updateScene() {
 
     const nA = $('nameA').value || 'A', nB = $('nameB').value || 'B';
     if (currentView !== '3rd') {
-        $('view-label').innerText = `${currentView === 'A' ? nA : nB} の視点`;
+        $('view-label').innerText = `${currentView === 'A' ? nA : nB} 的视角`;
         if (currentView === 'A') { personA.headParts.visible = false; personA.nameTag.visible = false; }
         if (currentView === 'B') { personB.headParts.visible = false; personB.nameTag.visible = false; }
     }
 
     $('info').innerHTML = `
         <div class="info-row">
-            <span class="info-label">📏 身長差</span>
+            <span class="info-label">📏 身高差</span>
             <span class="info-value">${Math.abs(hA - hB).toFixed(1)}<span class="unit">cm</span></span>
         </div>
     `;
@@ -601,11 +601,11 @@ function updateScene() {
 
 function animate() {
     requestAnimationFrame(animate);
-    // 見つめる向き（Bは指輪・バラのときAの顔、成功時のAはBの顔）
+    // 注视方向（B 拿着戒指・玫瑰时看向 A 的脸，成功时 A 看向 B 的脸）
     [[personA, personB], [personB, personA]].forEach(([p, q]) => { if (p.userData.gaze) p.headParts.lookAt(q.headParts.getWorldPosition(V())); });
     const centerPos = V(0, Math.max(personA.userData.height, personB.userData.height) * 0.5, 0);
     if (currentView === '3rd') {
-        // 球面座標でカメラを回す（真上・真下まで到達可能）
+        // 用球坐标旋转相机（可到达正上方・正下方）
         const px = Math.max(-PITCH_MAX, Math.min(PITCH_MAX, rotation.x));
         const cp = Math.cos(px), sp = Math.sin(px), sy = Math.sin(rotation.y), cy = Math.cos(rotation.y);
         camera.position.set(
@@ -613,7 +613,7 @@ function animate() {
             centerPos.y + sp * camDist,
             centerPos.z + cy * cp * camDist
         );
-        // 真上・真下でも向きが破綻しないよう、upベクトルをピッチに合わせて傾ける
+        // 为避免正上方・正下方时朝向崩坏，让 up 向量随俯仰角倾斜
         camera.up.set(-sy * sp, cp, -cy * sp);
         camera.lookAt(centerPos);
     } else {
@@ -668,7 +668,7 @@ function switchView() {
     const order = ['3rd', 'A', 'B'];
     currentView = order[(order.indexOf(currentView) + 1) % 3];
     const nA = $('nameA').value || 'A', nB = $('nameB').value || 'B';
-    $('view-label').innerText = currentView === '3rd' ? '三人称視点' : `${currentView === 'A' ? nA : nB} の視点`;
+    $('view-label').innerText = currentView === '3rd' ? '第三人称视角' : `${currentView === 'A' ? nA : nB} 的视角`;
     $('crosshair').style.display = currentView === '3rd' ? 'none' : 'block';
     personA.headParts.visible = true; personA.nameTag.visible = true;
     personB.headParts.visible = true; personB.nameTag.visible = true;
@@ -683,12 +683,79 @@ function shareToX() {
     const nA = $('nameA').value || 'A', nB = $('nameB').value || 'B';
     const hA = parseFloat($('heightA').value) || 158.0, hB = parseFloat($('heightB').value) || 171.5;
     const { pose, ok } = getOpts();
-    const how = { hand: '手を差し出して', letter: '手紙を差し出して', choco: 'バレンタインチョコを差し出して', rose: 'バラを差し出して', ring: '指輪を差し出して' }[pose];
-    const text = `${nB}(${hB.toFixed(1)}cm)が${nA}(${hA.toFixed(1)}cm)に${how}プロポーズ！😍結果は…${ok ? '成功！🤩' : '失敗😭'}\n#プロポーズシミュレーター\n`;
+    const how = { hand: '伸出手', letter: '递出情书', choco: '递出情人节巧克力', rose: '递出玫瑰', ring: '递出戒指' }[pose];
+    const text = `${nB}（${hB.toFixed(1)}cm）向 ${nA}（${hA.toFixed(1)}cm）${how}求婚了！😍结果是…${ok ? '成功！🤩' : '失败😭'}\n#求婚模拟器\n`;
     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}`, '_blank');
 }
 
 init();
+</script>
+
+<script>
+/* 设置持久化：名字・身高・颜色等会记住，刷新后自动恢复 */
+(function () {
+  var KEY = 'simSettings:' + location.pathname;
+  var SKIP = { seek: 1, pVol: 1 };
+  function list() {
+    var els = document.querySelectorAll('input,select,textarea'), out = [], i, el;
+    for (i = 0; i < els.length; i++) {
+      el = els[i];
+      if (el.type === 'file' || el.type === 'button' || el.type === 'submit' || el.type === 'reset') continue;
+      if (el.id && SKIP[el.id]) continue;
+      out.push(el);
+    }
+    return out;
+  }
+  function keyOf(el) {
+    if (el.id) return 'id:' + el.id;
+    var cn = (el.className || '').split(/\s+/)[0];
+    if (!cn) return null;
+    var sibs = document.querySelectorAll(el.tagName.toLowerCase() + '[class~="' + cn + '"]'), i;
+    for (i = 0; i < sibs.length; i++) if (sibs[i] === el) return 'cls:' + cn + ':' + i;
+    return null;
+  }
+  function get(el) {
+    return (el.type === 'checkbox' || el.type === 'radio') ? el.checked : el.value;
+  }
+  function set(el, v) {
+    var i;
+    if (el.tagName === 'SELECT') {
+      var ok = false;
+      for (i = 0; i < el.options.length; i++) if (el.options[i].value === v) ok = true;
+      if (!ok) return;
+    }
+    if (el.type === 'checkbox' || el.type === 'radio') el.checked = !!v;
+    else el.value = v;
+  }
+  function fire(el, type) {
+    try { el.dispatchEvent(new Event(type, { bubbles: true })); } catch (e) {}
+  }
+  function restore() {
+    var raw = null, data = null, els, k, i;
+    try { raw = localStorage.getItem(KEY); } catch (e) { return; }
+    if (!raw) return;
+    try { data = JSON.parse(raw); } catch (e) { return; }
+    els = list();
+    for (i = 0; i < els.length; i++) { k = keyOf(els[i]); if (k && data[k] !== undefined) set(els[i], data[k]); }
+    for (i = 0; i < els.length; i++) { fire(els[i], 'input'); fire(els[i], 'change'); }
+    for (i = 0; i < els.length; i++) { k = keyOf(els[i]); if (k && data[k] !== undefined) set(els[i], data[k]); }
+  }
+  var timer = null;
+  function save() {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(function () {
+      var els = list(), data = {}, k, i;
+      for (i = 0; i < els.length; i++) { k = keyOf(els[i]); if (k) data[k] = get(els[i]); }
+      try { localStorage.setItem(KEY, JSON.stringify(data)); } catch (e) {}
+    }, 200);
+  }
+  document.addEventListener('input', save, true);
+  document.addEventListener('change', save, true);
+  window.addEventListener('load', restore);
+  window.__simSettings = {
+    clear: function () { try { localStorage.removeItem(KEY); } catch (e) {} }
+  };
+})();
 </script>
 </body>
 </html>
